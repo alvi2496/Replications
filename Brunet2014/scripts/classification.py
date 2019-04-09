@@ -110,10 +110,10 @@ def chunks(l, n):
     return [l[i:i+n] for i in range(0, len(l), n)]
 
 
-def evaluate(dataset, feature):
+def evaluate(dataset):
 
     kfold = chunks(dataset, 100)
-
+    print('pass,accuracy_naive_bayes,time_naive_bayes,accuracy_decision_tree,time_decision_tree')
     for i in range(10):
         train = []
         if i == 0:
@@ -128,19 +128,22 @@ def evaluate(dataset, feature):
                 for t in l:
                     train.append(t)
 
-        print(datetime.datetime.now().time())
+        start_time = datetime.datetime.now()
         classifier = nltk.NaiveBayesClassifier.train(train)
-        ac = nltk.classify.accuracy(classifier, test)
-        print(i+1, feature, "NaiveBayes", ac)
-        print(datetime.datetime.now().time())
+        accuracy_naive_bayes = nltk.classify.accuracy(classifier, test)
+        end_time = datetime.datetime.now()
+        time_naive_bayes = end_time - start_time
 
-        print()
-
-        print()
+        start_time = datetime.datetime.now()
         classifier = nltk.DecisionTreeClassifier.train(train)
-        ac = nltk.classify.accuracy(classifier, test)
-        print(i+1, feature, "DecisionTree", ac)
-        print(datetime.datetime.now().time())
+        accuracy_decision_tree = nltk.classify.accuracy(classifier, test)
+        end_time = datetime.datetime.now()
+        time_decision_tree = end_time - start_time
+
+        row = str((i + 1)) + ',' + str(accuracy_naive_bayes) + ',' + str(time_naive_bayes) + ',' + \
+              str(accuracy_decision_tree) + ',' + str(time_decision_tree)
+
+        print(row)
 
 
 def run_experiment(lines):
@@ -148,7 +151,7 @@ def run_experiment(lines):
     for line in lines:
         pair = (combined_bigram_word_features(line[0]), line[1])
         dataset.append(pair)
-    evaluate(dataset, "combined")
+    evaluate(dataset)
 
 
 def start_classifier_evaluation():
