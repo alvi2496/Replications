@@ -4,7 +4,7 @@ proj_discussions = {str(): set()}
 dev_project = defaultdict(int)
 dev_discussions = {str(): set()}
 
-for line in open("./data/raw-developer-project-design_activity.data"):
+for line in open("./data/rq_2_b.data"):
 
     tokens = line.strip().split(" ")
     developer, project, activity = tokens[0], tokens[1], tokens[2]

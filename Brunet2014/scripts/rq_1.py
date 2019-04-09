@@ -1,5 +1,5 @@
 freq = {}
-for line in open('./data/raw-project-activity-category.data'):
+for line in open('./data/rq_1.data'):
     tokens = line.strip().split(" ")
     project, activity, category = tokens[0], tokens[1], tokens[2]
 

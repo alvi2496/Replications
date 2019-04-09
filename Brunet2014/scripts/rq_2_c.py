@@ -8,7 +8,7 @@ for line in open("./results/rq_2_b.csv"):
         proj_developer_amplitude[idp] = [amplitude, None]
 
 proj_commits = {}
-for line in open("./data/java-project-developer-commits.data"):
+for line in open("./data/rq_2_a_c.data"):
     project = line.strip().split(" ")[0]
     commits = line.strip().split(" ")[2]
 
@@ -18,7 +18,7 @@ for line in open("./data/java-project-developer-commits.data"):
         proj_commits[project] += int(commits)
 
 
-for line in open("./data/java-project-developer-commits.data"):
+for line in open("./data/rq_2_a_c.data"):
     project, developer, commits = line.strip().split(" ")[0], line.strip().split(" ")[1], line.strip().split(" ")[2]
 
     idp = project+" "+developer

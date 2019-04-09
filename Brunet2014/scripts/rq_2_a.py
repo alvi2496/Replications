@@ -1,7 +1,7 @@
 design_discussions = {str(): (set(), set())}
 
 project_designers_developers = {str(): (set(), set())}
-for line in open('./data/raw-developer-activity-category-project.data'):
+for line in open('./data/rq_2_a.data'):
 	tokens = line.strip().split(" ")
 	activity, category, project = tokens[1], tokens[2], tokens[3]
 
@@ -14,7 +14,7 @@ for line in open('./data/raw-developer-activity-category-project.data'):
 
 
 # designers to first slot
-for line in open('./data/raw-developer-activity-category-project.data'):
+for line in open('./data/rq_2_a.data'):
 	tokens = line.strip().split(" ")
 	developer, activity, project = tokens[0], tokens[1], tokens[3]
 
@@ -23,7 +23,7 @@ for line in open('./data/raw-developer-activity-category-project.data'):
 	if id_activity in design_discussions:
 		project_designers_developers[project][0].add(developer)
 
-for line in open('./data/java-project-developer-commits.data'):
+for line in open('./data/rq_2_a_c.data'):
 	tokens = line.strip().split(" ")
 	project, developer = tokens[0], tokens[1]
 	if project in project_designers_developers:

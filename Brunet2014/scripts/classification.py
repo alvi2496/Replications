@@ -157,7 +157,7 @@ def run_experiment(lines):
 def start_classifier_evaluation():
 
     lines = [(remove_stop_words(line.strip().split(',')[0]),
-              line.strip().split(',')[1]) for line in open("./data/sentences-classified.csv", 'r')]
+              line.strip().split(',')[1]) for line in open("./data/discussions.csv", 'r')]
     shuffle(lines)
     run_experiment(lines)
 
