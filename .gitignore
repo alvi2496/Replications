@@ -1,2 +1,15 @@
 venv/
 .idea/
+
+*.log
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+*.cut
+*.bcf
+*.run.xml
+*.bib.bak
+main.pdf
+fig/*converted-to.pdf

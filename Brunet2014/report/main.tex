@@ -1,0 +1,64 @@
+\documentclass[conference]{IEEEtran}
+
+% Please include packages in the following file:
+\input{packages.inc}
+
+% Please define macros in the following file:
+\input{macros-def.inc}
+
+% Instructions for inserting comments:
+%   \todo{t} for a TODO item
+%   \modified{t} to mark as modified
+% 	\nbb{t}{r} for inline region
+%	\internalnote{t} for side-notes
+%	\remarks{t} for inline comments in red
+%	\del{t} for strikethrough
+%	\ins{t} for suggestions
+% ... read the input file for more
+\input{comments.inc}
+
+\begin{document}
+\bstctlcite{MyBSTcontrol} % granular control for bib entries (cf. main.bib)
+
+% The title
+\title{The Title}
+
+% The authors
+\author{
+	\IEEEauthorblockN{First Author\IEEEauthorrefmark{1}, Second Author\IEEEauthorrefmark{1}}
+	\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science, University of Victoria, Victoria, Canada\\
+		\{firstauthor, secondauthor\}@uvic.ca}
+}
+
+% Configure here to get the paper title
+\makeatletter
+\hypersetup{
+	pdftitle = {\@title},
+	pdfsubject = {} % TODO e.g., SEAMS 2019
+}
+\makeatother
+
+\maketitle
+
+\begin{abstract}
+% TODO
+\end{abstract}
+
+\begin{IEEEkeywords}
+% TODO
+\end{IEEEkeywords}
+
+% contents
+\input{01-introduction}
+\input{02-conclusions}
+
+\section*{Acknowledgment}
+This work was funded in part by the National Sciences and Engineering Research Council (NSERC) of Canada, IBM Canada Ltd. and IBM Advanced Studies (CAS) and the University of Victoria (Canada).
+
+% TODO balance the columns in the last page (e.g., the bibliography)
+% \balance
+
+\bibliographystyle{IEEEtran}
+\bibliography{main}
+
+\end{document}
