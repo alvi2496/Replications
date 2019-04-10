@@ -2,5 +2,18 @@
 \section{Replication}
 We strictly followed the steps demonstrated in the paper. While replicating, we took the following steps:
 
-\noindent\textbf{Stopwords Removal}--- 
-\label{sect:replication}
+\subsection{Stopwords Removal}
+Stopwords are the words that has the similar likelihood of occurring in documents regardless of the relevance of the query~\cite{Wilbur1992}. It is very important to remove stopwords to improve the performance of the classifier as well as reducing the size of the dataset. We have used the The \emph{Natural Language Toolkit's (NLTK)}\footnote{NLTK, https://www.nltk.org/}~\cite{Loper2002} english stopwords set to primarily remove some general stopwords. Then we have looked for some document specific stopwords ex. `lgtm' which is short form of `looks good to me' and removed them. The before and after status of a sentence for stopwords removal can be seen in Table~\ref{tbl:stopwords_removal}
+  \begin{table}
+  	\caption{Sample of sentence status before and after stopwords removal. The sentence on the top is the actual sentence. The bottom one is after removing the stopwords  }
+  	\begin{tabular}{ p{3.25in}}
+	 	\toprule
+	  		Did you send a bug report comment upstream or something because otherwise we are gonna have to fix this again with the next version of assimp \\
+  		\midrule
+	  		send bug report comment upstream something otherwise gonna fix next version assimp \\
+  		\bottomrule
+
+  	\end{tabular}
+  	\label{tbl:stopwords_removal}
+  \end{table}   
+\label{sect:replication}  
