@@ -1,6 +1,4 @@
-import logging
 import datetime
-import sys
 from random import shuffle
 from textblob import *
 from nltk.corpus import stopwords
@@ -9,10 +7,7 @@ from nltk.classify import *
 import itertools
 from nltk.collocations import BigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
-import collections
 import nltk.classify.util, nltk.metrics
-from nltk.classify import NaiveBayesClassifier
-from nltk.classify import DecisionTreeClassifier
 
 
 def remove_stop_words(sentence):
