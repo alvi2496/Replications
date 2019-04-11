@@ -1,5 +1,6 @@
 % !TEX root = main.tex
 \section{Replication}
+\label{sect:replication}
 We strictly followed the steps demonstrated in the paper. While replicating, we took the following steps:
 
 \subsection{Stopwords Removal}
@@ -16,4 +17,18 @@ Stopwords are the words that has the similar likelihood of occurring in document
   	\end{tabular}
   	\label{tbl:stopwords_removal}
   \end{table}   
-\label{sect:replication}  
+
+\subsection{Feature Selection}  
+\emph{Feature selection} is the process of selecting a subset of the terms occurring in the training set and using only this subset as features in text classification\footnote{https://nlp.stanford.edu/IR-book/html/htmledition/feature-selection-1.html}. Feature selection are used mainly for two reason. \noindent\textbf{One}, it reduces the size of the effective vocabulary which is helpful to speed up the training for some expensive classifier like Decision Tree. \noindent\textbf{Two}, it often increases the accuracy by reducing the amount of noise feature in a corpus. In the original paper, they combined two methods of feature extraction. \noindent\textbf{First}, they have found and ranked the bigram\footnote{https://en.wikipedia.org/wiki/Bigram} collection of other association measures by first constructing it for all bigrams in a giver sequence. Then they have provided the Pearson's chi-square as the score to return the top bigrams. \noindent\textbf{Second}, they have counted every bigram by iterating through every words in the sentence to find out the pair and assigned true/false value for them. Table~\ref{tbl:feature_selection} shows the dictionary after implementing combined bigram features.
+  \begin{table}
+	\caption{Sample of the dictionary of words that is returned after using combined bigram features. In the top: the original text after stopwords removal. In the bottom: The dictionary of combined word bigrams}
+	\begin{tabular}{ p{3.25in}}
+		\toprule
+		martijnvg seems reasonable done \\
+		\midrule
+		{`martijnvg': True, `seems': True, `reasonable': True, `done': True, (`martijnvg', `seems'): True, (`reasonable', `done'): True, (`seems', `reasonable'): True} \\
+		\bottomrule
+		
+	\end{tabular}
+	\label{tbl:feature_selection}
+\end{table} 
