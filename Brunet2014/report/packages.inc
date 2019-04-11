@@ -26,3 +26,4 @@
 \usepackage{cellspace} % add line breaks inside cell (\makecell{...})
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{subcaption}
