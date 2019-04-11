@@ -31,4 +31,7 @@ Stopwords are the words that has the similar likelihood of occurring in document
 		
 	\end{tabular}
 	\label{tbl:feature_selection}
-\end{table} 
+\end{table}
+
+\subsection{Classification and Validation}
+We have used Naive Bayes and Decision Tree classifier as the classification models for the sentences like they did in the paper. Also following them, we have also used 10-fold cross validation method to validate the performance of the classifiers. We have divided the whole dataset in 10 chunks containing almost 100 sentences in each chunk. Then we have taken 9 chunks to train our model and then tested it with the other chunk we left untouched. We repeated this procedure for 9 more time each time moving onto the next chunk to use it as test and the rest of them as train. We are calculating the accuracy of every pass which is essentially the fraction of corresponding values that are equal to the test label. Finally, we have calculated the mean of 10 passes to estimate the overall accuracy for each classifier. We have also estimated the performance of each classifier in in terms of time. To do that, we have taken into account the difference between the start time of the classification and the end time. This can demonstrate the cost of each classifier in time.
