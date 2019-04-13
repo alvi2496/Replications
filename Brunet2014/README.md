@@ -22,8 +22,13 @@ install them run
 To download the `nltk stopwords corpus` run  
 `nltk.download('stopwords')` in the `python interactive console`.
 
-## About Code
-The `main.py` contains all the code of this replication.
+
+## Run the Replication
+1. To run the classifier: `python classification.py`
+2. Research Question 1: `python rq_1.py`
+3. Research Question 2(a): `python rq_2_a.py`
+4. Research Question 2(b): `python rq_2_b.py`
+5. Research Question 2(c): `python rq_2_c.py`
 
 
 ## About Paper
@@ -31,19 +36,17 @@ The paper can be found in this folder names as `paper.pdf`
 
 
 ## About Data
-The data file can be found in this folder and named as 
-`sentences-classified.csv`
-
-
-## Run the Replication
-To run the replication, simply run the main.py file by  
-`$ python main.py`  
-Please make sure to be in the directory of the `main.py` file.
+The data file can be found in `data` folder.
 
 
 ## Results
 The outputs will be generated in the results folder. Please refer to the
-Readme file in the `results` folder for more insights on the results.
+`output` folder for all the output files. Please click [here](https://docs.google.com/spreadsheets/d/1YfRCcBOrMyNlYLrEMaG6Dj8r9hUqJoaVtatcKi34JxM/edit?usp=sharing) to get the analytical results.
+
+
+## Report
+The `report.pdf` contains the report of the replication in pdf format. The latex file package can be found
+in the `report` forlder.
 
 
 ## References
